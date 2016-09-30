@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TP 4.2 / Rotation, déplacement et opacité</title>
+		<style>
+			body{
+				font: 0.8em Verdana, Arial, Helvetica, sans-serif;
+			}
+			#image{
+				position: absolute;
+				left: 20px;
+				top: 20px;
+				
+				/* Animation */
+				-webkit-animation: rotation_deplacement_effacement 3s infinite;
+				-moz-animation: rotation_deplacement_effacement 3s infinite;
+				-o-animation: rotation_deplacement_effacement 3s infinite;
+				animation: rotation_deplacement_effacement 3s infinite;
+			}
+			@-webkit-keyframes rotation_deplacement_effacement{
+				0%{opacity: 1; -webkit-transform: rotate(0deg); left: 20px;}
+				50%{opacity: 0; -webkit-transform: rotate(360deg); left: 400px;}
+				100%{opacity: 1; -webkit-transform: rotate(-360deg); left: 20px;}
+			}
+			@-moz-keyframes rotation_deplacement_effacement{
+				0%{opacity: 1; -webkit-transform: rotate(0deg); left: 20px;}
+				50%{opacity: 0; -webkit-transform: rotate(360deg); left: 400px;}
+				100%{opacity: 1; -webkit-transform: rotate(-360deg); left: 20px;}
+			}
+			@-o-keyframes rotation_deplacement_effacement{
+				0%{opacity: 1; -webkit-transform: rotate(0deg); left: 20px;}
+				50%{opacity: 0; -webkit-transform: rotate(360deg); left: 400px;}
+				100%{opacity: 1; -webkit-transform: rotate(-360deg); left: 20px;}
+			}
+			@keyframes rotation_deplacement_effacement{
+				0%{opacity: 1; -webkit-transform: rotate(0deg); left: 20px;}
+				50%{opacity: 0; -webkit-transform: rotate(360deg); left: 400px;}
+				100%{opacity: 1; -webkit-transform: rotate(-360deg); left: 20px;}
+			}
+		
+	
+		</style>
+		</head>
+	<body>
+		<div id="image"><img src="../images-tp-4-2/smiley100.jpg" alt=""/></div>
+	</body>
+</html>

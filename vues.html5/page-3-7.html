@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TP 3.3 / Déplacement + transition de couleurs</title>
+		<style>
+		
+			body{
+				/* Mise en forme de la police */
+				font: 1em Verdana, Arial, Helvetiva, sans-serif;
+			}
+			#menu li{
+				/* Mise en forme des élèments <li>*/
+				list-style: none;
+			}
+			#menu a{
+				/* Mise en forme des éléments <a> */
+				position : relative;
+				left: 20px;
+				display: block;
+				width: 120px;
+				padding: 5px;
+				margin-bottom: 5px;
+				border: 1px solid #333;
+				background-color: #eee;
+				text-align: center;
+				font-weight: bold;
+				color: black;
+				text-decoration: none;
+				
+				/* Transition de la propriété left sur 0.5 sec */
+				-moz-transition: left 200ms ease-in;
+				-webkit-transition: left 200ms ease-in;
+				-o-transition: left 200ms ease-in;
+				transition: left 200ms ease-in;
+				
+				/* Transition des propriétés background-color et color sur 0.5 secondes */
+				-moz-transition: background-color 200ms linear, color 200ms linear;
+				-webkit-transition: background-color 200ms linear, color 200ms linear;
+				-o-transition: background-color 200ms linear, color 200ms linear;
+				transition: background-color 200ms linear, color 200ms linear;
+				
+			}
+			#menu a:hover{
+				/* Valeur des propriétés background-color et color au survol de la souris */
+				background-color: #00A3E4;
+				color: white;
+				
+				/* Valeur de la propriété left au survol de la souris */
+				left: 50px;
+			}
+			
+			/* Transformation des <img> au survol des liens <a> */
+			#menu li a:hover{
+				/* Agrandissement de 10%, rotation de 3 degrés et translation à droite de 2 px */
+				-moz-transform: scale(1.05) rotate(3deg) translateX(2px);
+				-webkit-transform: scale(1.05) rotate(3deg) translateX(2px);
+				-o-transform: scale(1.05) rotate(3deg) translateX(2px);
+				transform: scale(1.05) rotate(3deg) translateX(2px);
+				
+				 -webkit-backface-visibility: hidden;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul id="menu">
+			<li><a href="#">Accueil</a></li>
+			<li><a href="#">Références</a></li>
+			<li><a href="#">Contacts</a></li>
+		</ul>		
+	</body>
+</html>

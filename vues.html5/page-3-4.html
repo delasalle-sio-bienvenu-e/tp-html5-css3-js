@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TP 3.4 / Menu à tiroirs</title>
+	<style>
+		
+		body {
+			font: 0.8em Verdana, Arial, Helvetica, sans-serif;
+		}
+		
+		#menu {
+			width: 180px;
+			padding: 0 20px 20px 20px;
+			margin: 20px;
+			border: 1px solid #333;
+			background-color: #ccc;
+		}
+		
+		#menu h3 {
+			padding-bottom: 15px;
+			border-bottom: 1px solid #333;
+		}
+		
+		#menu > ul {
+			position: relative;
+			margin: 0;
+			padding: 0;:
+		}
+		
+		#menu > ul > li {
+			height: 20px;
+			margin: 0 0 20px 0;
+		}
+		
+		#menu > ul > li.last-child {
+			margin: 0;
+		}
+		
+		#menu > ul > li a.lien {
+			position: absolute;
+			z-index: 100;
+			display: block;
+			text-decoration: none;
+			color: black;
+		}
+		
+		#menu > ul > li > div {
+			position: absolute;
+			z-index: 50;
+			left: 30px;
+			top: 0;
+			width: 200px;
+			height: 180px;
+			border: 1px solid #fff;
+			color: white;
+			background-color: black;
+			padding: 15px;
+		
+			opacity: 0;
+		
+			-moz-transition: all 1s ease-in;
+			-webkit-transition: all 1s ease-in;
+			-o-transition: all 1s ease-in;
+			transition: all 1s ease-in;
+		}
+		
+		#menu > ul > li > div > h3 {
+			padding-bottom: 10px;
+			border-bottom: 1px solid #fff;
+		}
+		
+		#menu > ul > li:hover > div {
+			left: 150px;
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<section id="menu">
+		<h3>Nouveaux arrivants</h3>
+		<ul>
+			<li>
+				<a href="#"class="lien">Famille VERSAIRE</a>
+				<div>
+					<h3>Famille VERSAIRE</h3>
+					<ul>
+						<li>Elsa VERSAIRE</li>
+						<li>Rose VERSAIRE</li>
+						<li>Laure VERSAIRE</li>
+						<li>Annie VERSAIRE</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#"class="lien">Famille FEIMAL</a>
+				<div>
+					<h3>Famille FEIMAL</h3>
+					<ul>
+						<li>Akim FEIMAL</li>
+						<li>Sam FEIMAL</li>
+						<li>Emma FEIMAL</li>
+						<li>Hirma FEIMAL</li>
+						<li>Oussama FEIMAL</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#"class="lien">Famille TITEGOUTTE</a>
+				<div>
+					<h3>Famille TITEGOUTTE</h3>
+					<ul>
+						<li>Anne TITEGOUTTE</li>
+						<li>Corinne TITEGOUTTE</li>
+						<li>Justine TITEGOUTTE</li>
+						<li>Emma TITEGOUTTE</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="#"class="lien">Famille FROID</a>
+				<div>
+					<h3>Famille FROID</h3>
+					<ul>
+						<li>Eva FROID</li>
+						<li>Aude FROID</li>
+						<li>Anne FROID</li>
+						<li>Marc FROID</li>
+						<li>Sanson FROID</li>
+						<li>Jules FROID</li>
+						<li>Ella FROID</li>
+					</ul>
+				</div>
+			</li>			
+		</ul>
+	</section>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TP 3.6 / Transition et transformation en 3D</title>
+		<style>
+			html{
+				font: 2em sans-serif;
+				text-align: center;
+			}
+			.scene{
+				width: 200px;
+				height: 200px;
+				margin: 20px auto;
+			}
+			.avant, .arriere{
+				/* Dimensions héritées de la division scene */
+				width: inherit;
+				height: inherit;
+				
+				position: absolute;
+				line-height: 200px;
+				
+				/* Transition de 1 sec */
+				-moz-transition: -moz-transform 1s;
+				transition: transform 1s;
+				
+				/* On rend invisible les faces arrières */
+				-moz-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+			.avant{
+				background: tomato;
+				/* rotation (nulle) autour de l'axe des X */
+				-moz-transform: perspective(600px) rotateX(0deg);
+				transform: perspective(600px) rotateX(0deg);
+			}
+			.arriere{
+				background: deepskyblue;
+				/* rotation de 180° autour de l'axe des X */
+				-moz-transform: perspective(600px) rotateX(180deg);
+				transform: perspective(600px) rotateX(180deg);
+			}
+			.scene:hover .avant{
+			 /* rotation de 180° autour de l'axe des X */
+			 -moz-transform: perspective(600px) rotateX(180deg);
+			 transform: perspective(600px) rotateX(180deg);
+			}
+			.scene:hover .arriere{
+			 /* rotation de 360° autour de l'axe des X */
+			 -moz-transform: perspective(600px) rotateX(360deg);
+			 transform: perspective(600px) rotateX(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<h3>L'effet Flip-Card</h3>
+		<div class="scene">
+			<div class="avant">HELLO</div>
+			<div class="arriere">BONJOUR</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TP 3.1 / transition de déplacement</title>
+	<style>
+	body {
+		font: 1em Verdana, Arial, Helvetica, sans-serif;
+	}
+	
+	#menu li {
+		list-style: none;
+	}
+	
+	#menu a {
+		position: relative;
+		left: 20px;
+		display: block;
+		width: 120px;
+		padding: 5px;
+		margin-bottom: 5px;
+		border: 1px solid #333;
+		background-color: #eee;
+		text-align: center;
+		font-weight: bold;
+		color: black;
+		text-decoration: none;*
+		
+		-moz-transition: background-color 500ms linear, color 500ms linear;
+		-webkit-transition: background-color 500ms linear, color 500ms linear;
+		-o-transition: background-color 500ms linear, color 500ms linear;
+		transition: background-color 500ms linear, color 500ms linear;
+	}
+	
+	#menu a:hover {
+		background-color: #00A3E4;
+		color: white;
+
+	}
+</style>
+</head>
+<body>
+	<ul id="menu">
+		<li><a href="#">Accueil</a></li>
+		<li><a href="#">Références</a></li>
+		<li><a href="#">Contacts</a></li>	
+	</ul>
+</body>
+</html>
