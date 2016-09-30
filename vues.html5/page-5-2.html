@@ -59,7 +59,7 @@
 			
 			monExprRegul = new RegExp(EXPRESSION);
 			
-			if ( monExprRegul.text (leMdpAtester) == true && leMdpAtester.length >= 8 ) return true;
+			if ( monExprRegul.test (leMdpAtester) == true && leMdpAtester.length >= 8 ) return true;
 			else return false;
 		}	
 		
