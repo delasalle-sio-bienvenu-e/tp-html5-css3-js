@@ -15,7 +15,7 @@ else {
 	if (empty ($_POST ["txtConfirmation"]) == true ) $confirmationMdp = "";else $confirmationMdp = $_POST["txtConfirmation"];
 	if (empty ($_POST ["caseAfficherMdp"]) == true ) $afficherMdp = "";else $afficherMdp = $_POST["caseAfficherMdp"];
 
-	if ($nouveauMdp != $confirmationMdp) 
+	if ($nouveauMdp != $confirmationMdp) {
 
 		$message = "Le nouveau mot de passe et sa confirmation sont différents !";
 		$typeMessage = 'avertissement';
