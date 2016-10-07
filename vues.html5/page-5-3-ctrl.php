@@ -15,9 +15,8 @@ else {
 	if (empty ($_POST ["txtConfirmation"]) == true ) $confirmationMdp = "";else $confirmationMdp = $_POST["txtConfirmation"];
 	if (empty ($_POST ["caseAfficherMdp"]) == true ) $afficherMdp = "";else $afficherMdp = $_POST["caseAfficherMdp"];
 
-	if ($nouveauMdp != $confirmationMdp)
-	{
-		
+	if ($nouveauMdp != $confirmationMdp) 
+
 		$message = "Le nouveau mot de passe et sa confirmation sont différents !";
 		$typeMessage = 'avertissement';
 		include_once ('page-5-3-vue.php');
@@ -52,7 +51,7 @@ else {
 					$message .= "Votre nouveau mot de passe est :".$nouveauMdp;
 					$adresseEmetteur="delasalle.sio.eleves@gmail.com";
 					
-					$adresseDestinataire = "delasalle.sio.causer.a@gmail.com";
+					$adresseDestinataire = "delasalle.sio.bienvenu.e@gmail.com";
 					
 					if (preg_match ("#^.+@gmail\.com$#",$adresseDestinataire) == true)
 					{
