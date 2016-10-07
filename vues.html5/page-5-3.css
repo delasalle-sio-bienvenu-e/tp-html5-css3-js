@@ -1,0 +1,224 @@
+html {
+	height: 100%;
+}
+
+body {
+	font: 1em Verdana, Arial, Helvetica, sans-serif;
+	
+	/* fond avec un dégradé de couleur (blanc en haut, gris en bas) */
+	background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(210, 210, 210));
+}
+
+/* style de la division id="page" */
+div#page {
+	/* largeur, centrage avec des marges auto, padding, bordure noire, alignement gauche */
+	width: 800px;
+	margin: 20px auto;
+	padding: 0px 20px;
+	border: #000 1px solid; 
+	text-align: left;
+	
+	/* coins arrondis avec un rayon de 15 pixels */
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-o-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-khtml-border-radius: 15px;
+	border-radius: 15px;
+	
+	/* fond avec un dégradé de couleur (blanc en haut, gris léger en bas) */
+	background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(225, 225, 225));
+}
+
+/* ------------------------ styles lies au systeme d'affichage de messages ---------------------------- */
+
+/* mise en forme de la boite d'affichage du message */
+.classe_message > div {
+	width: 500px;
+	background: #fff;
+	position: relative;
+	margin: 10% auto;
+	padding: 30px;
+	text-shadow: 0 1px 0 #fff;			
+	
+	/* coins arrondis */
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-o-border-radius: 7px;
+	-ms-border-radius: 7px;
+	-khtml-border-radius: 7px;
+	border-radius: 7px;
+	
+	/* ombre portée */
+	-webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+	-moz-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+	-o-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+	
+	/* fond avec un dégradé de couleur (blanc en haut, gris en bas) */	
+	background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+	background: -webkit-gradient(linear, right top, right bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(210, 210, 210));
+}
+
+/* style du titre du message d'avertissement et son icone */
+#affichage_message h2.classe_avertissement {
+	padding-left: 50px;
+	line-height: 32px;
+	background: url(../images-tp-5-3/avertissement.png) no-repeat left bottom;
+	color: #0b4c8e;
+}
+
+/* style du titre du message d'information et son icone */
+#affichage_message h2.classe_information {
+	padding-left: 50px;
+	line-height: 32px;
+	background: url(../images-tp-5-3/information.png) no-repeat left bottom;
+	color: #0b4c8e;
+}
+
+/* style du message */
+#affichage_message p.classe_texte_message {
+	padding-left: 50px;
+	font-size: 1.2em;
+}
+
+/* style du lien de fermeture */
+.classe_message a {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #000;
+}
+
+/* le conteneur qui va recouvrir la page */
+.classe_message {
+	/* on occupe tout l'espace */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* un fond noir avec une transparence de 30% */
+	background: rgba(0, 0, 0, 0.3);
+	/* le conteneur est placé sur la page */
+	z-index: 10000;
+	
+	/* utilisation de la transformation de transparence à l'ouverture */
+	-webkit-transition: opacity 500ms ease-in;
+	-moz-transition: opacity 500ms ease-in;
+	-o-transition: opacity 500ms ease-in;
+	transition: opacity 500ms ease-in;
+	
+	/* au chargement de la page, le conteneur est transparent */
+	opacity: 0;
+	/* et on ne peut pas cliquer sur ses éléments */
+	pointer-events: none;
+}
+
+/* quand le conteneur est ciblé, il devient opaque */
+.classe_message:target {
+	opacity: 1;
+	/* et on peut maintenant cliquer sur ses éléments */
+	pointer-events: auto;
+}
+
+/* animation à l'ouverture de la boîte de message */
+@-webkit-keyframes animation_ouverture {
+	0% { -webkit-transform: scale3d(0.1, 0.1, 1); -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+	55% { -webkit-transform: scale3d(1.08, 1.08, 1); -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+	75% { -webkit-transform: scale3d(0.95, 0.95, 1); -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+	100% { -webkit-transform: scale3d(1, 1, 1); -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }	
+}
+@-moz-keyframes animation_ouverture {
+	0% { -moz-transform: scale3d(0.1, 0.1, 1); -moz-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+	55% { -moz-transform: scale3d(1.08, 1.08, 1); -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+	75% { -moz-transform: scale3d(0.95, 0.95, 1); -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+	100% { -moz-transform: scale3d(1, 1, 1); -moz-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }	
+}
+@-o-keyframes animation_ouverture {
+	0% { -o-transform: scale3d(0.1, 0.1, 1); -o-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+	55% { -o-transform: scale3d(1.08, 1.08, 1); -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+	75% { -o-transform: scale3d(0.95, 0.95, 1); -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+	100% { -o-transform: scale3d(1, 1, 1); -o-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }	
+}
+@keyframes animation_ouverture {
+	0% { transform: scale3d(0.1, 0.1, 1); box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+	55% { transform: scale3d(1.08, 1.08, 1); box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+	75% { transform: scale3d(0.95, 0.95, 1); box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+	100% { transform: scale3d(1, 1, 1); box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }	
+}
+
+/* declenchement de l'animation d'ouverture */
+.classe_message:target > div {
+	-webkit-animation: animation_ouverture 1000ms linear;
+	-moz-animation: animation_ouverture 1000ms linear;
+	-o-animation: animation_ouverture 1000ms linear;
+	animation: animation_ouverture 1000ms linear;
+}
+
+/* animation à la fermeture de la boîte de message */
+@-webkit-keyframes animation_fermeture {
+	0% { -webkit-transform: scale3d(1, 1, 1); }
+	100% { -webkit-transform: scale3d(0.1, 0.1, 1); }
+}
+@-moz-keyframes animation_fermeture {
+	0% { -moz-transform: scale3d(1, 1, 1); }
+	100% { -moz-transform: scale3d(0.1, 0.1, 1); }
+}
+@-o-keyframes animation_fermeture {
+	0% { -o-transform: scale3d(1, 1, 1); }
+	100% { -o-transform: scale3d(0.1, 0.1, 1); }
+}
+@keyframes animation_fermeture {
+	0% { transform: scale3d(1, 1, 1); }
+	100% { transform: scale3d(0.1, 0.1, 1); }
+}
+
+/* déclenchement de l'animation de fermeture */
+.classe_message > div {
+	-webkit-animation: animation_fermeture 500ms linear;
+	-moz-animation: animation_fermeture 500ms linear;
+	-o-animation: animation_fermeture 500ms linear;
+	animation: animation_fermeture 500ms linear;
+}
+
+/* ---------------- styles des éléments de formulaire ------------------- */
+
+/* styles des zones de saisies de textes, de mots de passe et d'adresses mail */
+input[type=text], input[type=password], input[type=email] {
+	border: solid 1px grey;
+	width: 200px;
+	display: inline-block;
+}
+/* styles des <label> */
+label {
+	width: 250px;
+	text-align: left;
+	display: inline-block;
+}
+/* style du bouton de validation du formulaire */
+input[type=submit] {
+	font: 1em helvetica, sans-serif;
+	border: solid 1px grey;
+	width: 100px;
+	display: inline-block;
+	margin-left: 300px;
+	background-color: #ddd;
+}
+
+/* styles des zones de saisies de textes et de mots de passe quand la saisie est incorrecte */
+input[type=text]:invalid , input[type=password]:invalid {
+	/* un fond blanc avec un petit rond rouge à droite */
+	background: #fff url(../images-tp-5-3/rond-rouge.png) no-repeat 99% center;
+}
+
+/* styles des zones de saisies de textes et de mots de passe quand la saisie est correcte */
+input[type=text]:valid , input[type=password]:valid {
+	/* un fond blanc avec un petit rond vert à droite */
+	background: #fff url(../images-tp-5-3/rond-vert.png) no-repeat 99% center;
+}
